@@ -1,0 +1,116 @@
+{
+  "frontendTestList": [
+    {
+      "title": "vuex的五个属性和原理",
+      "answer": [
+        "state,getters,mutations,actions,modules",
+        "1. state 存放vuex的基本数据",
+        "2. getters 类似vuex的计算属性，计算state数据，然后返回一个新数据",
+        "3. mutations 类似事件， 通过commit触发, 可以在这里操作改变vuex数据, 不支持异步",
+        "4. actions 类似与mutations, 通过dispatch触发, actions不直接改变数据, 而是触发mutations去改变，不同于mutations的是支持异步",
+        "5. modules 把store分割成模块, 每个模块可以拥有自己的state, getters, mutations, actions 甚至是modules嵌套子模块"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "watch与computed的区别",
+      "answer": [
+        "计算属性computed:",
+        "1.支持缓存，只有依赖数据发生变化，才会进行重新计算",
+        "2.不支持异步，当computed内有异步操作时无效，无法监听数据的变化",
+        "3.属性值如果是函数，默认会使用get方式，当内部依赖数据发生变化时，使用set方法",
+        "侦听属性watch:",
+        "1.不支持缓存，数据变化，直接会触发相应的操作",
+        "2.watch支持异步",
+        "3.deep，监听对象内部值"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "如何解决数据嵌套太深的问题",
+      "answer": [
+        "1. 数据嵌套太深导致视图不更新，可以使用$forceUpdate()进行强制更新视图",
+        "2. 数据嵌套太深导致watch监听不到可以设置deep:true进行深监听"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "如何在v-for循环中实现v-model数据的双向绑定",
+      "answer": [
+        "<div v-for=\"(item, index) in ageList\" :key=\"index\">",
+        "<input v-model=\"ageList[index]\" type=\"text\">",
+        "<h1>{{ ageList[index] }}</h1>",
+        "</div>"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "说一下vue.js页面闪烁 {{ message }}",
+      "answer": [
+        "添加v-cloak指令，配合css [v-cloak] { display: none }",
+        "这个指令可以隐藏未编译的标签，直到实例编译结束。"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "vue 如何检测数据变化(数组相关), 如何检测新增对象属性变化",
+      "answer": [
+        "1. 改变数组使用this.$set(arr, 下标, 对应值), 数组不能检测变化的问题在vue3得到修复",
+        "2. 对象新增属性使用this.$set(obj, 'name', 'hasaki'), 对象新增属性不能检测变化的问题在vue3得到修复"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "什么情况下会产生片段实例",
+      "answer": [
+        "模板只包含其他组件（其他组件可能是一个片段实例）, 或者模板只包含router-view,或者使用v-if vue2的模板有且只能有一个根元素，vue3可以产生代码片段"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "vue的内置组件有哪些",
+      "answer": [
+        "1. component 组件，全局组件或局部组件",
+        "2. transition"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "js原型链",
+      "answer": [
+        "1.__proto__:每个对象都有一个__proto__属性（null除外）,对象的__proto__指向关联对像实例原型，直到指向到对象为Object，Object到__proto__属性为null",
+        "2.prototype: 每个函数都有一个prototype属性，每一个javascript对象创建的时候就会关联另一个对象，这个对象就是原型，每一个对象都会从原型继承实例",
+        "3.constructor: 实例原型通过constructor指向函数(和prototype相反)",
+        "(prototype指向构造函数的原型，__proto__指向关联对象原型，一层一层往上形成原型链)"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "闭包",
+      "answer": [
+        "1.闭包的定义 函数和函数内部能访问到到变量的总和",
+        "function bibao() { var a = 1 function jia() { a++ return a } return jia } let j = bibao()",
+        "定义一个函数, 函数内部声明一个变量和一个内部函数，内部函数里面操作变量， 然后return变量, 最后把内部函数return回去"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    },
+    {
+      "title": "从输入URL到浏览器显示页面发生了什么",
+      "answer": [
+        "1.DNS解析域名 2.TCP三次握手建立连接 3.发送HTTP请求 4.服务器处理请求并返回HTTP报文 5.浏览器解析渲染页面"
+      ],
+      "myAnswer": "",
+      "showAnswer": false
+    }
+  ]
+}
